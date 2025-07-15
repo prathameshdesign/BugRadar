@@ -1,0 +1,435 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom font configurations */
+@layer base {
+  html {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+/* Enhanced animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUpSmooth {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -8px, 0);
+  }
+  70% {
+    transform: translate3d(0, -4px, 0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in-up-smooth {
+  animation: fadeInUpSmooth 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInFromRight 0.8s ease-out forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-bounce-gentle {
+  animation: bounce 2s infinite;
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .backdrop-blur-subtle {
+    backdrop-filter: blur(8px);
+  }
+  
+  .glow-yellow {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  }
+  
+  .glow-yellow-strong {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+  }
+}
+
+/* Custom gradient backgrounds */
+.bg-gradient-radial {
+  background: radial-gradient(circle at center, var(--tw-gradient-stops));
+}
+
+/* Enhanced focus states for accessibility */
+@layer components {
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-white;
+  }
+  
+  button {
+    @apply focus-ring;
+  }
+  
+  a {
+    @apply focus-ring;
+  }
+  
+  /* Enhanced button hover effects */
+  .btn-primary {
+    @apply bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-semibold transition-all duration-200;
+  }
+  
+  .btn-primary:hover {
+    @apply from-yellow-500 to-yellow-600 scale-105 shadow-xl;
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-gray-200 text-gray-700 font-semibold transition-all duration-200;
+  }
+  
+  .btn-secondary:hover {
+    @apply bg-gray-50 border-gray-300 shadow-lg;
+  }
+}
+
+/* Mobile-first responsive design improvements */
+@media (max-width: 768px) {
+  /* Remove extra spacing and ensure proper mobile layout */
+  .mobile-spacing-fix {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  .hero-spacing {
+    gap: 2rem;
+  }
+  
+  .mobile-stack {
+    flex-direction: column;
+  }
+  
+  .mobile-center {
+    text-align: center;
+  }
+  
+  .mobile-full-width {
+    width: 100%;
+  }
+  
+  /* Ensure buttons are touch-friendly on mobile */
+  button {
+    min-height: 48px;
+    min-width: 48px;
+  }
+  
+  /* Better spacing for mobile cards */
+  .mobile-card-spacing {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Mobile CTA button padding */
+  .mobile-cta-padding {
+    padding-top: 1.125rem !important;
+    padding-bottom: 1.125rem !important;
+  }
+  
+  /* Improved text sizing for mobile */
+  .mobile-text-adjust h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+  
+  .mobile-text-adjust h2 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+  
+  .mobile-text-adjust p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+  
+  /* Better mobile padding */
+  .mobile-px {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .mobile-py {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  /* Fix mobile navbar spacing */
+  .mobile-nav-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Ensure proper mobile section spacing */
+  .mobile-section-spacing {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  /* Mobile testimonial card improvements */
+  .mobile-testimonial-spacing {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Ensure testimonials stack properly on mobile */
+  .testimonials-mobile {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  /* Mobile FAQ improvements */
+  .mobile-faq-spacing {
+    padding: 1.25rem;
+  }
+  
+  /* Improve FAQ text line-height on mobile */
+  .mobile-faq-text {
+    line-height: 1.7;
+  }
+  
+  /* Improve footer text line-height on mobile */
+  .mobile-footer-text {
+    line-height: 1.6;
+  }
+  
+  /* Mobile hero text width adjustment */
+  .mobile-hero-text {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small mobile adjustments */
+  .mobile-text-adjust h1 {
+    font-size: 2rem;
+  }
+  
+  .mobile-text-adjust h2 {
+    font-size: 1.75rem;
+  }
+  
+  /* Ensure proper padding on small screens */
+  .mobile-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Stack social proof items on very small screens */
+  .mobile-stack-social {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  /* Extra small mobile CTA padding */
+  .mobile-cta-padding {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  
+  /* Ensure proper small mobile spacing */
+  .mobile-extra-small-spacing {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  /* Extra small mobile hero text */
+  .mobile-hero-text {
+    max-width: 95%;
+  }
+  
+  /* Extra small mobile FAQ text */
+  .mobile-faq-text {
+    line-height: 1.8;
+  }
+  
+  /* Extra small mobile footer text */
+  .mobile-footer-text {
+    line-height: 1.7;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .bg-gradient-to-r {
+    background: #FFD700;
+  }
+  
+  .text-gray-600 {
+    color: #333333;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .animate-fade-in-up,
+  .animate-fade-in,
+  .animate-slide-in-left,
+  .animate-slide-in-right {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Dark mode support (future enhancement) */
+@media (prefers-color-scheme: dark) {
+  /* Dark mode styles would go here */
+}
+
+/* Enhanced hover effects for interactive elements */
+.interactive-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interactive-hover:hover {
+  transform: translateY(-2px);
+}
+
+/* Subtle animation delays for staggered effects */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+
+/* Fix for mobile footer white space */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background-color: #111827;
+  overflow-x: hidden;
+}
+
+#root {
+  background-color: white;
+  min-height: 100vh;
+}
