@@ -143,7 +143,7 @@ function App() {
   const faqs = [
     {
       question: "Does BugRadar work with Jira, Linear, or other dev tools?",
-      answer: "Yes — you can connect BugRadar with Jira, Linear, and most major bug tracking tools in one click."
+      answer: "Yes, you can connect BugRadar with Jira, Linear, and most major bug tracking tools in one click."
     },
     {
       question: "Do I need to install or configure anything?",
