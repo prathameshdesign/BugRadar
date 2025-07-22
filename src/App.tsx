@@ -147,7 +147,7 @@ function App() {
     },
     {
       question: "Do I need to install or configure anything?",
-      answer: "No setup headaches. BugRadar runs in-browser — no download or code required."
+      answer: "No setup headaches. BugRadar runs in-browser, no download or code required."
     },
     {
       question: "Is it mobile-friendly and optimized for all screen sizes?",
@@ -155,11 +155,11 @@ function App() {
     },
     {
       question: "I'm not technical. Can I still use BugRadar?",
-      answer: "Yes. BugRadar is built for founders, PMs, and marketers — no technical skills needed."
+      answer: "Yes. BugRadar is built for founders, PMs, and marketers so no technical skills needed."
     },
     {
       question: "How fast can I start using it?",
-      answer: "BugRadar is ready in under 2 minutes. No training, no fluff — just results."
+      answer: "BugRadar is ready in under 2 minutes. No training, no fluff just results."
     }
   ];
 
